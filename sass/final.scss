@@ -1,0 +1,555 @@
+@import "./colors";
+@import "./global";
+@import "./mixins";
+// HEADER (NAVBAR + MAIN SECTION)
+header {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  .bg {
+    width: 100%;
+    position: absolute;
+    height: 750px;
+    top: 0;
+    z-index: -1;
+  }
+  nav {
+    width: 100%;
+    height: 100px;
+    @include dynamic-flex-row($jc: space-between);
+    @extend .padding;
+    .menu {
+      display: none;
+    }
+    ul {
+      @include dynamic-flex-row;
+      gap: 10%;
+      li {
+        a {
+          color: $light_color;
+        }
+      }
+    }
+  }
+  main {
+    @extend .padding;
+    @include dynamic-flex-row($jc: space-between);
+    .text {
+      color: $light_color;
+      h6 {
+        font-size: 60px;
+      }
+      p {
+        width: 60%;
+      }
+    }
+    img {
+      width: 45%;
+    }
+  }
+  .scroll {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .ill {
+    position: absolute;
+    top: 15%;
+  }
+}
+// CRYPTO TABEL
+.table {
+  width: 100%;
+  height: 850px;
+  margin-top: 150px;
+  @include dynamic-flex-column;
+  gap: 5%;
+  padding: 0 10px;
+  color: $light_color;
+  table {
+    border-collapse: collapse;
+    border-top: 1px solid $light_color;
+    tr {
+      border-bottom: 1px solid $light_color;
+      .green {
+        color: $green_price;
+      }
+      .red {
+        color: $red_price;
+      }
+      td {
+        padding: 27px 17px;
+        .btc {
+          @include dynamic-flex-row($jc: start);
+          gap: 7%;
+          span {
+            color: $light_bg;
+          }
+        }
+        &:nth-child(4) {
+          img {
+            width: 10px;
+          }
+        }
+        &:nth-child(5) {
+          img {
+            width: 10px;
+          }
+        }
+        &:nth-child(1) {
+          color: $light_bg;
+          img {
+            margin-right: 10px;
+          }
+        }
+        &:nth-child(7) {
+          text-align: right;
+          p {
+            color: $light_bg;
+          }
+        }
+      }
+    }
+  }
+}
+// PLATFORMS CARDS
+.platforms {
+  width: 100%;
+  height: 580px;
+  background-color: $light_color;
+  @include dynamic-flex-column;
+  @extend .padding;
+  gap: 5%;
+  h3 {
+    font-size: 32px;
+  }
+  .cards {
+    width: 100%;
+    @include dynamic-flex-row;
+    gap: 10%;
+    .card {
+      width: 33%;
+      @include dynamic-flex-column($ai: start);
+      gap: 30px;
+      h4 {
+        font-size: 24px;
+      }
+      ul {
+        li {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+// DOWNLOAD CRYPTO
+.future {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  @extend .padding;
+  @include dynamic-flex-row($jc: space-between);
+  .text {
+    width: 45%;
+    color: $light_color;
+    @include dynamic-flex-column($ai: start);
+    gap: 30px;
+    h2 {
+      font-size: 32px;
+      width: 80%;
+    }
+    .apps {
+      img {
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  img {
+    min-width: 200px;
+  }
+  .apps2 {
+    img {
+      display: none;
+    }
+  }
+  .shape {
+    position: absolute;
+    top: 70px;
+    right: 120px;
+    z-index: -1;
+  }
+}
+// THRIVE CARDS
+.thrive {
+  width: 100%;
+  height: 700px;
+  @include dynamic-flex-column;
+  @extend .padding;
+  gap: 3%;
+  h2 {
+    font-size: 32px;
+  }
+  background-color: $light_color;
+  .cards {
+    @include dynamic-flex-row;
+    gap: 30px;
+    .card {
+      width: 368px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      .card-body {
+        @include dynamic-flex-column($ai: start);
+        gap: 10px;
+        padding: 20px;
+        h3 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+          color: $light_bg;
+        }
+        .card-footer {
+          gap: 15px;
+          @include dynamic-flex-row;
+          .date-time {
+            @include dynamic-flex-row;
+            gap: 7px;
+          }
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+// ENTER EMAIL + SUBSCRIBE BUTTON
+.drop {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  @extend .padding;
+  @include dynamic-flex-column;
+  gap: 10px;
+  color: $light_color;
+  h2 {
+    font-size: 50px;
+  }
+  p {
+    font-size: 24px;
+  }
+  .subscribe {
+    width: 500px;
+    height: 75px;
+    @include dynamic-flex-row($jc: space-between);
+    border: 1px solid $light_color;
+    border-radius: 37px;
+    padding: 20px;
+    padding-right: 5px;
+    margin-top: 30px;
+    input {
+      background-color: transparent;
+      border: transparent;
+      width: 200px;
+      font-size: 15px;
+    }
+    button {
+      width: 139px;
+      height: 60px;
+      border-color: transparent;
+      border-radius: 31px;
+      background-color: $btn_orange;
+      color: $light_color;
+      font-size: 17px;
+      cursor: pointer;
+    }
+  }
+
+  .left {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+}
+// FOOTER
+footer {
+  width: 100%;
+  height: 540px;
+  background: rgb(34, 0, 118);
+  background: linear-gradient(
+    90deg,
+    rgba(34, 0, 118, 1) 0%,
+    rgba(78, 0, 98, 1) 100%
+  );
+  color: $light_color;
+  @extend .padding;
+  hr {
+    border-color: $light_bg;
+  }
+  .menu {
+    padding: 50px 0;
+    @include dynamic-flex-row($ai: top);
+    gap: 10%;
+    .card {
+      width: 15%;
+      h3 {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+      ul {
+        li {
+          margin-bottom: 25px;
+          a {
+            font-size: 17px;
+            color: $light_bg;
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    padding: 35px 0;
+    @include dynamic-flex-row($jc: space-between);
+    p {
+      color: $light_bg;
+      font-size: 14px;
+    }
+    .social {
+      @include dynamic-flex-row;
+      gap: 20px;
+    }
+  }
+}
+// RESPONSIVE DESIGN FOR PHONE
+@include tablet {
+  // HEADER + MAIN SECTION
+  header {
+    height: 400px;
+    .bg {
+      display: none;
+    }
+    nav {
+      @include dynamic-flex-row($jc: space-between);
+      padding: 20px 40px;
+      button {
+        display: none;
+      }
+      ul {
+        display: none;
+      }
+      .menu {
+        display: block;
+      }
+    }
+    main {
+      padding: 20px;
+      text-align: center;
+      @include dynamic-flex-column;
+      .text {
+        @include dynamic-flex-column;
+        h6 {
+          font-size: 30px;
+        }
+      }
+
+      img {
+        display: none;
+      }
+    }
+  }
+  // IMG ABSOLUTE
+  .scroll {
+    display: none;
+  }
+  // IMG ABSOLUTE
+  .ill {
+    display: none;
+  }
+  // CRYPTO TABEL
+  .table {
+    margin-top: 100px;
+    height: 620px;
+    border-top: transparent;
+    h2 {
+      text-align: center;
+    }
+    tr {
+      td {
+        font-size: 14px;
+        padding: 0px;
+        &:nth-child(1) {
+          display: none;
+        }
+        &:nth-child(3) {
+          display: none;
+        }
+        &:nth-child(4) {
+          display: none;
+        }
+        &:nth-child(5) {
+          display: none;
+        }
+        &:nth-child(7) {
+          display: none;
+        }
+        &:nth-child(8) {
+          display: none;
+        }
+      }
+    }
+  }
+  // PLATFORMS CARDS
+  .platforms {
+    @include dynamic-flex-column;
+    margin-top: 80px;
+    height: 1200px;
+    h3 {
+      font-size: 20px;
+      text-align: center;
+    }
+    .cards {
+      @include dynamic-flex-column;
+      gap: 10%;
+      .card {
+        width: 100%;
+        @include dynamic-flex-column;
+        gap: 30px;
+        h4 {
+          text-align: center;
+          font-size: 18px;
+        }
+        ul {
+          li {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+  // DOWNLOAD CRYPTO
+  .future {
+    padding: 0 20px;
+    @include dynamic-flex-column;
+    .text {
+      width: 100%;
+      @include dynamic-flex-column;
+      h2 {
+        width: 90%;
+        font-size: 20px;
+        text-align: center;
+        width: 80%;
+      }
+      p {
+        text-align: center;
+        font-size: 14px;
+      }
+      .apps {
+        display: none;
+      }
+    }
+    .phone {
+      width: 300px;
+    }
+    .apps2 {
+      @include dynamic-flex-row;
+      gap: 10px;
+      margin-top: 30px;
+      img {
+        display: inline-block;
+        min-width: 100px;
+        height: 35px;
+      }
+    }
+  }
+  // IMG ABSOLUTE
+  .shape {
+    display: none;
+  }
+  // THRIVE CARDS
+  .thrive {
+    height: 1500px;
+    padding: 20px;
+    .cards {
+      @include dynamic-flex-column;
+      .card {
+        width: 343px;
+        .card-head {
+          img {
+            width: 343px;
+          }
+        }
+      }
+    }
+  }
+  // ENTER EMAIL + SUBSCRIBE BUTTON
+  .drop {
+    width: 100%;
+    height: 250px;
+    padding: 20px;
+    h2 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 14px;
+      text-align: center;
+    }
+    .subscribe {
+      width: 330px;
+      height: 48px;
+      padding-right: 3px;
+      input {
+        font-size: 12px;
+      }
+      button {
+        height: 40px;
+        border-color: transparent;
+        font-size: 14px;
+      }
+    }
+    .left {
+      display: none;
+    }
+    .right {
+      display: none;
+    }
+  }
+  // FOOTER
+  footer {
+    height: 790px;
+    padding: 18px;
+    .menu {
+      padding: 0;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .card {
+        width: 40%;
+        h3 {
+          margin-bottom: 10px;
+        }
+        ul {
+          li {
+            margin-bottom: 10px;
+            a {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    .copyright {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+  }
+}

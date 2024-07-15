@@ -1,0 +1,23 @@
+@mixin dynamic-flex-row($jc: center, $ai: center) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $jc;
+  align-items: $ai;
+}
+@mixin dynamic-flex-column($jc: center, $ai: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $jc;
+  align-items: $ai;
+}
+@mixin tablet {
+  @media (width<1250px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (width<760px) {
+    @content;
+  }
+}
